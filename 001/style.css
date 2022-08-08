@@ -1,0 +1,172 @@
+/* // delete the following line if no text is used
+// edit the line if you wanna use other fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+
+/* // use only the available space inside the 400x400 frame */
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* //my code starts from here */
+    /* //here the gradient will go from bottom left to its opposite ie top-right (top right is the   place where it will stop) and it will apply the first color you specify and ends with the  	last color */
+    background-image: linear-gradient(to top right, #43389F 0%, #4ec6ca 100%)
+}
+
+.center {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.num100 {
+    /* //for making its childs absolute position */
+    position: relative;
+    /* // fixed height and width */
+    height: 100px;
+    width: 200px;
+}
+
+.one-top {
+    /* //default box-shadow */
+    box-shadow: 0 0 0.9rem 0 rgba(0, 0, 0, 0.2);
+    /* // styling */
+    background-color: white;
+    height: 2.5rem;
+    width: 1.25rem;
+    border-radius: 3px;
+    /* // positioning */
+    position: absolute;
+    top: 0;
+    /* //for throwing it a slight outside the num100 div so that the takes over it (makes sense  right?!) */
+    left: -1rem;
+    /* //rotation */
+    transform: rotate(45deg);
+    /* //z-index */
+}
+
+.one-bottom {
+    /* //default box-shadow */
+    box-shadow: 0 0 0.9rem 0 rgba(0, 0, 0, 0.2);
+    /* // styling */
+    width: 1.5rem;
+    height: 100%;
+    border-radius: 3px;
+    background-color: white;
+    /* // postioning */
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* //z-index */
+    z-index: 5;
+}
+
+.first-zero {
+    /* //default box-shadow */
+    box-shadow: 0 0 0.9rem 0 rgba(0, 0, 0, 0.2);
+    /* // styling */
+    width: 50px;
+    height: 50%;
+    /* // for making it round	 */
+    border-radius: 50%;
+    border: 1.5rem solid white;
+    /* // postioning */
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    /* //z-index */
+    z-index: 4;
+}
+
+.second-zero {
+    /* //default box-shadow */
+    box-shadow: 0 0 0.9rem 0 rgba(0, 0, 0, 0.2);
+    /* // styling */
+    width: 50px;
+    height: 50%;
+    /* // for making it round	 */
+    border-radius: 100%;
+    border: 1.5rem solid white;
+    /* // postioning */
+    position: absolute;
+    top: 0;
+    left: 6.25rem;
+    /* //z-index */
+    z-index: 3;
+}
+
+.days {
+    /* //display and position */
+    display: block;
+    position: relative;
+
+    /* // styling:  */
+    font-size: 4.8rem;
+    line-height: 3.75rem;
+    font-weight: 700;
+
+    margin-top: 0.3rem;
+}
+
+.challenge {
+    /* //display and position */
+    display: block;
+    position: relative;
+
+    /* // styling:  */
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+    /* //margin */
+    margin-top: 0.5rem;
+}
+
+/* 
+//things learned 
+
+// box-shadow
+// the first two values are offset, first is horizontal and the second one is vertical
+//if you set both to 0 and 0 it would not have any affect, positive (+) value on horizontal offset will move it to the right side and negative (-) offset value will move it to the left side. and for vertical off set + val will move it to bottom and - will move it to top
+// note: % dont works as offset values
+// box-shadow: 20px, 20px;
+
+
+//the third value is blur radius ie size of the blur, here 10px means it will go from a specified solid color to the blur effect in those 10px, it will be a gradual decline from a solid color to the less opacity (blur)
+// note: you cannot give a negative val to blur radius, zero 0 is the default
+// box-shadow: 20px, 20px 10px;
+
+//the fourth property is blur spread (make the blur spread further), its like making the blur further out, note: it can take a negative {-} value
+
+// box-shadow: 20px, 20px 10px -1rem;
+
+//the fifth and last property is the color of the box-shadow
+//here current color will inherit the color of the element that its giving the box-shadow to
+// box-shadow: 20px, 20px 10px -1rem currentcolor;
+
+// you can also specify custom color
+// box-shadow: 20px, 20px 10px -1rem black;
+
+//the bonus property: inset, inset will give the box-shadow inside the box or the element 
+// syntax= box-shadow: inset 0 0 10px -1rem black;
+//inset box shadow will be top of the background color but under the content
+
+//note: you can add multiple box-shadows just by seprating them with comma , 
+//syntax: box-shadow:  20px 20px 10px -1rem black, 40px 40px 10px 1rem yellow;
+//the first box-shadow that will come will have the top most priority ie it will be on top of the others and as we go on the order priority or i can say z index will decrease.
+ */
