@@ -1,0 +1,297 @@
+/* // delete the following line if no text is used */
+/* // edit the line if you wanna use other fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+/* // use only the available space inside the 400x400 frame */
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    background-color: #272C34;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-circle {
+    position: relative;
+    /*for making its childern pos abs*/
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 1rem 0 black;
+    animation: box-shadow-fade 4s infinite;
+}
+
+.sky {
+    position: absolute;
+    inset: 0 0 0 0;
+    height: 124px;
+    background-color: #7DDFFC;
+    z-index: 0;
+    /*underneath everything*/
+    animation: sky-changing-color 4s infinite;
+}
+
+.sun {
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    z-index: 1;
+    background-color: yellow;
+    box-shadow: 0 0 13px 0 #fff339;
+    /*additional box shadow to make it look more realistic*/
+    /* //rotating  */
+    /* //the default transfrom origin is (50%,50%) ,which is exactly the center of any element// so to make our sun go down and up by rotating we gonna have to change its transform origin and increase its vertical origin */
+    transform-origin: 50% 400%;
+    /* //animation for sun rotating  */
+    animation: rotate-sun 4s cubic-bezier(0.4, 0, 0.5, 1) infinite;
+}
+
+.base-pyramid {
+    position: absolute;
+    top: 10px;
+    /* //for horizontal centering */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 57px solid transparent;
+    border-bottom-color: #F4F4F4;
+    animation: making-shadow-bs-pyramid 4s infinite;
+}
+
+.side-pyramid {
+    position: absolute;
+    top: 70px;
+    /* //for horizontal centering */
+    left: 52%;
+    transform: translateX(-50%);
+    height: 65px;
+    width: 130px;
+    background-color: #DDDADA;
+    /* // border: 57px solid transparent;
+    // border-width: 57px;
+    // border-bottom-color: #DDDADA; */
+
+    clip-path: polygon(50% 0%, 60% 100%, 100% 100%);
+    animation: making-shadow-side-pyramid 4s infinite;
+
+
+}
+
+.ground {
+    position: absolute;
+    inset: 124px 0 0 0;
+    background-color: #F0DE75;
+    height: 56px;
+    animation: ground-fades 4s infinite;
+}
+
+.shadow {
+    position: absolute;
+    z-index: 10;
+    height: 30px;
+    width: 360px;
+    background-color: rgba(0, 0, 0, 0.2);
+    top: 124px;
+    left: -84px;
+    clip-path: polygon(116px 0%, 231px 0%, 80% 100%);
+    /* // clip-path: polygon(100% 100%, 0 0, 100% 0); */
+
+    animation: shadow-jingling 4s cubic-bezier(0.4, 0, 0.5, 1) infinite;
+}
+
+@keyframes sky-changing-color {
+    0% {
+        background-color: #272C34;
+    }
+
+    30% {
+        background-color: #7DDFFC;
+
+    }
+
+    70% {
+        background-color: #7DDFFC;
+
+    }
+
+    100% {
+        background-color: #272C34;
+    }
+
+}
+
+@keyframes ground-fades {
+    0% {
+        background-color: #272C34;
+    }
+
+    30% {
+        background-color: #F0DE75;
+
+    }
+
+    70% {
+        background-color: #F0DE75;
+
+    }
+
+    100% {
+        background-color: #272C34;
+    }
+
+}
+
+
+@keyframes rotate-sun {
+    0% {
+        transform: rotate(-70deg);
+        background-color: #F57209;
+
+    }
+
+    30% {
+        transform: rotate(-28deg);
+        background-color: #FFEF00;
+
+    }
+
+    70% {
+        transform: rotate(28deg);
+        background-color: #FFEF00;
+
+    }
+
+    100% {
+        transform: rotate(70deg);
+        background-color: #F57209;
+    }
+
+}
+
+@keyframes making-shadow-bs-pyramid {
+    0% {
+        border-bottom-color: #DDDADA;
+
+    }
+
+    30% {
+        border-bottom-color: #F4F4F4;
+
+    }
+
+    70% {
+        border-bottom-color: #DDDADA;
+
+    }
+
+    100% {
+        border-bottom-color: transparent;
+
+    }
+}
+
+
+@keyframes making-shadow-side-pyramid {
+    0% {
+        background-color: #DDDADA;
+
+    }
+
+    30% {
+        background-color: #DDDADA;
+
+
+    }
+
+    70% {
+        background-color: #F4F4F4;
+
+
+    }
+
+    100% {
+        background-color: transparent;
+
+    }
+}
+
+@keyframes box-shadow-fade {
+    0% {
+        box-shadow: 0 0 1rem 0 black;
+
+    }
+
+    50% {
+        box-shadow: 0 0 1rem 0 black;
+    }
+
+    75% {
+        box-shadow: 0 0 1rem 0 black;
+    }
+
+    100% {
+        box-shadow: 0 0 1rem 0 transparent;
+
+    }
+}
+
+@keyframes shadow-jingling {
+    0% {
+        transform: scaleY(0.8);
+        /*from zero height to full then half then full then 0*/
+        clip-path: polygon(116px 0%, 231px 0%, 100% 100%);
+        background-color: rgba(0, 0, 0, 0.2);
+
+    }
+
+    30% {
+        transform: scaleY(1);
+        clip-path: polygon(116px 0%, 231px 0%, 80% 100%);
+        background-color: rgba(0, 0, 0, 0.2);
+
+    }
+
+    55% {
+        transform: scaleY(1);
+
+        background-color: rgba(0, 0, 0, 0.2);
+
+    }
+
+    75% {
+        transform: scaleY(1);
+        background-color: rgba(0, 0, 0, 0.2);
+
+    }
+
+    100% {
+        transform: scaleY(1);
+        /*making it zero height almost like ending the shadow at 100% of the animation or the end oof the animation*/
+        clip-path: polygon(116px 0%, 231px 0%, 0% 100%);
+        background-color: transparent;
+
+    }
+}
